@@ -7,10 +7,10 @@ npm install          # or yarn install
 npm run dev          # or yarn dev
 
 # Access application at:
-#  _____________________________
-# |                             |
-# |  http://localhost:3000      |
-# |_____________________________|
+ _____________________________
+|                             |
+|  http://localhost:3000      |
+|_____________________________|
 ```
 
 ```bash
