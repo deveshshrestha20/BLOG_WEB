@@ -1,16 +1,21 @@
 # Next.js 13 Blog Application
 
 ```bash
-# Quick Start
+# =================== QUICK START ===================
+git clone <your-repository-url>
 cd blog
+
+# Install dependencies
 npm install          # or yarn install
+
+# Start development server
 npm run dev          # or yarn dev
 
 # Access application at:
- _____________________________
-|                             |
-|  http://localhost:3000      |
-|_____________________________|
+#  
+# --> [http://localhost:3000](http://localhost:3000) <--
+#  
+# ====================================================
 ```
 
 ```bash
