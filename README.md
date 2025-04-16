@@ -109,32 +109,20 @@ blog
     └── types                      # TypeScript type definitions
 
 
-Installation & Setup
-Prerequisites
-Node.js (version 14 or higher)
+## Installation & Setup
 
-npm (included with Node.js) or Yarn
+### Prerequisites
 
-Steps
-Clone the Repository:
+- **Node.js** (version 14 or higher)
+- **npm** (included with Node.js) or **Yarn**
 
-bash
-Copy
-git clone <your-repository-url>
-cd blog
-Install Dependencies:
+### Steps
 
-bash
-Copy
-npm install
-# or
-yarn
-Run the Development Server:
+1. **Clone the Repository:**
 
-bash
-Copy
-npm run dev
-# or
+   ```bash
+   git clone <your-repository-url>
+   cd blog
 yarn dev
 Visit http://localhost:3000 in your browser to view the application.
 
