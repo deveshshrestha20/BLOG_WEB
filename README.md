@@ -1,4 +1,4 @@
-# E-Bazar Nepal Blog
+#  Blog Website
 
 A modern, responsive blog platform built with Next.js, TypeScript, and Tailwind CSS. This application allows users to create, read, update, and delete blog posts with a beautiful and intuitive user interface.
 
@@ -33,8 +33,8 @@ A modern, responsive blog platform built with Next.js, TypeScript, and Tailwind 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/e-bazar-nepal-blog.git
-   cd e-bazar-nepal-blog
+   git clone https://github.com/yourusername/BLOG_WEB.git
+   cd blog
    ```
 
 2. Install dependencies:
