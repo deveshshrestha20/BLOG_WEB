@@ -4,6 +4,13 @@ A simple blog application built with **Next.js 13** and **Tailwind CSS**. This p
 
 ---
 
+# Quick Start
+cd blog
+npm install          # or yarn install
+npm run dev          # or yarn dev
+# Access at http://localhost:3000
+```
+
 ## Table of Contents
 
 1. [Overview](#overview)
@@ -110,20 +117,7 @@ blog
 
 
 
-```bash
-# Installation & Setup
-# Prerequisites
-Node.js              # version 14 or higher
-npm/Yarn             # package managers
 
-# Steps
-git clone 
-cd blog
-npm install          # or yarn install
-npm run dev          # or yarn dev
-
-# Access the application at http://localhost:3000
-```
 
 ```bash
 # Usage
