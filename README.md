@@ -18,68 +18,78 @@ npm run dev          # or yarn dev
 
 # Access application
 # → http://localhost:3000
-## Table of Contents
+====================================================
+Table of Contents
+Overview
 
-1. [Overview](#overview)
-2. [Tech Stack](#tech-stack)
-3. [Features](#features)
-4. [Folder Structure](#folder-structure)
-5. [Installation & Setup](#installation--setup)
+Tech Stack
 
+Features
 
----
+Folder Structure
 
-## Overview
+Installation & Setup
 
-This **Blog App** allows users to:
+Overview
+This Blog App allows users to:
 
-- **Sign up** for an account and securely store their credentials in the browser’s localStorage.
-- **Log in** with valid credentials to access the main blogs page.
-- **Add new blogs** with a title, description, and an optional image (using a simulated image upload by storing a file path).
-- **Edit** or **delete** existing blog posts.
-- **Log out** to clear the session (removing the `isLoggedIn` flag from localStorage).
+Sign up for an account and securely store their credentials in the browser’s localStorage.
 
-The application leverages Next.js 13's **App Router** and is styled with Tailwind CSS for a modern, responsive design.
+Log in with valid credentials to access the main blogs page.
 
----
+Add new blogs with a title, description, and an optional image (using a simulated image upload by storing a file path).
 
-## Tech Stack
+Edit or delete existing blog posts.
 
-- **Next.js 13:** React framework for server-side rendering and static site generation.
-- **React 18:** Bundled with Next.js for building interactive UIs.
-- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
-- **localStorage:** Utilized for client-side data persistence (user credentials and blog entries).
+Log out to clear the session (removing the isLoggedIn flag from localStorage).
 
----
+The application leverages Next.js 13's App Router and is styled with Tailwind CSS for a modern, responsive design.
 
-## Features
+Tech Stack
+Next.js 13: React framework for server-side rendering and static site generation.
 
-1. **Signup & Login**  
-   - Signup page collects name, email, and password, then saves this data to localStorage.
-   - Login page validates credentials against stored user data.  
-     - On success, sets `"isLoggedIn": true` and redirects to `/blogs`.
-     - On failure, displays an error message.
+React 18: Bundled with Next.js for building interactive UIs.
 
-2. **Blog Management**  
-   - **Create:** Add new blog posts (title, description, image path).
-   - **Edit/Delete:** Modify or remove existing blog entries.
-   - **Display:** Blogs are shown on the `/blogs` page with the most recent posts first.
-   - **Dummy Data:** Seeds 5 dummy blogs into localStorage on the first visit if none exist.
+Tailwind CSS: A utility-first CSS framework for rapid UI development.
 
-3. **Protected Routes**  
-   - The `/blogs` page is accessible only when the user is authenticated.
-   - Unauthorized access automatically redirects to the login page.
+localStorage: Utilized for client-side data persistence (user credentials and blog entries).
 
-4. **Logout**  
-   - Clears the `isLoggedIn` flag from localStorage and redirects the user to `/login`.
+Features
+Signup & Login
 
----
+Signup: Collects name, email, and password, then saves this data to localStorage.
 
-## Folder Structure
+Login: Validates credentials against stored user data.
 
+On success, sets "isLoggedIn": true and redirects to /blogs.
+
+On failure, displays an error message.
+
+Blog Management
+
+Create: Add new blog posts (title, description, image path).
+
+Edit/Delete: Modify or remove existing blog entries.
+
+Display: Blogs are shown on the /blogs page with the most recent posts first.
+
+Dummy Data: Seeds 5 dummy blogs into localStorage on the first visit if none exist.
+
+Protected Routes
+
+The /blogs page is accessible only when the user is authenticated.
+
+Unauthorized access automatically redirects to the login page.
+
+Logout
+
+Clears the isLoggedIn flag from localStorage and redirects the user to /login.
+
+Folder Structure
 Below is the folder structure as depicted in the screenshots:
 
-```bash
+bash
+Copy
 blog
 ├── .gitignore
 ├── eslint.config.mjs
@@ -121,18 +131,41 @@ blog
     ├── store                      # localStorage utilities and data management
     │   └── storage.ts
     └── types                      # TypeScript type definitions
-
-
-
-
-
-```bash
+bash
+Copy
 # Usage
 1. Sign Up           # Create a new account on the signup page
 2. Log In            # Enter your credentials to access the blog dashboard
 3. Create a Blog     # Click on "Create New Blog" to add content
 4. Manage Blogs      # Edit or delete your blogs from the dashboard
 5. Log Out           # End your session when finished
-```
+Installation & Setup
+Prerequisites
+Node.js (version 14 or higher)
 
-```bash
+npm (included with Node.js) or Yarn
+
+Steps
+Clone the Repository:
+
+bash
+Copy
+git clone <your-repository-url>
+cd blog
+Install Dependencies:
+
+bash
+Copy
+npm install
+# or
+yarn
+Run the Development Server:
+
+bash
+Copy
+npm run dev
+# or
+yarn dev
+View the Application:
+
+Open http://localhost:3000 in your browser to view the application.
