@@ -6,8 +6,11 @@ cd blog
 npm install          # or yarn install
 npm run dev          # or yarn dev
 
-A**ccess at http://localhost:3000**
-
+# Access application at:
+#  _____________________________
+# |                             |
+# |  http://localhost:3000      |
+# |_____________________________|
 ```
 
 ```bash
