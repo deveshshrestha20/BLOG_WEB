@@ -109,20 +109,29 @@ blog
     └── types                      # TypeScript type definitions
 
 
-## Installation & Setup
 
-### Prerequisites
+```bash
+# Installation & Setup
+# Prerequisites
+Node.js              # version 14 or higher
+npm/Yarn             # package managers
 
-- **Node.js** (version 14 or higher)
-- **npm** (included with Node.js) or **Yarn**
+# Steps
+git clone 
+cd blog
+npm install          # or yarn install
+npm run dev          # or yarn dev
 
-### Steps
+# Access the application at http://localhost:3000
+```
 
-1. **Clone the Repository:**
+```bash
+# Usage
+1. Sign Up           # Create a new account on the signup page
+2. Log In            # Enter your credentials to access the blog dashboard
+3. Create a Blog     # Click on "Create New Blog" to add content
+4. Manage Blogs      # Edit or delete your blogs from the dashboard
+5. Log Out           # End your session when finished
+```
 
-   ```bash
-   git clone <your-repository-url>
-   cd blog
-yarn dev
-Visit http://localhost:3000 in your browser to view the application.
-
+```bash
