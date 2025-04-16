@@ -78,18 +78,6 @@ blog
     └── types                       # TypeScript type definitions
 ```
 
-```bash
-# Full Installation & Setup
-# Prerequisites
-Node.js              # version 14 or higher
-npm/Yarn             # package managers
-
-# Steps
-git clone <your-repository-url>
-cd blog
-npm install          # or yarn install
-npm run dev          # or yarn dev
-```
 
 ```bash
 # Usage
@@ -100,7 +88,3 @@ npm run dev          # or yarn dev
 5. Log Out           # End your session when finished
 ```
 
-```bash
-# License
-[Your License Here] © [Your Name/Organization]
-```
