@@ -32,8 +32,8 @@ export default function BlogsPage() {
 
   if (loading) {
     return (
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-white">
-        <h1 className="text-4xl font-serif text-[#121926] mb-12">All articles</h1>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 bg-white">
+        <h1 className="text-3xl sm:text-4xl font-serif text-[#121926] mb-8 sm:mb-12">All articles</h1>
         <BlogSkeleton featured={true} count={3} />
         <BlogSkeleton count={6} />
       </div>
@@ -61,12 +61,12 @@ export default function BlogsPage() {
   const remainingBlogs = sortedBlogs.slice(3);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-white">
-      <h1 className="text-4xl font-serif text-[#121926] mb-12">All articles</h1>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 bg-white">
+      <h1 className="text-3xl sm:text-4xl font-serif text-[#121926] mb-8 sm:mb-12">All articles</h1>
 
       {/* Featured Section */}
       {featuredBlogs.length > 0 && (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {/* Large Featured Article */}
           <article className="lg:col-span-8 flex flex-col h-full group transition-all duration-300 hover:-translate-y-1">
             <Link href={`/blogs/${featuredBlogs[0].id}`} className="flex flex-col flex-grow">
@@ -76,13 +76,13 @@ export default function BlogsPage() {
                     src={featuredBlogs[0].image}
                     alt={featuredBlogs[0].title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 66vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 66vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
               </div>
               <div>
-                <div className="flex items-center text-sm mb-2">
+                <div className="flex flex-wrap items-center text-xs sm:text-sm mb-2">
                   <span className="uppercase text-[#121926]">{featuredBlogs[0].category}</span>
                   <span className="mx-2 text-[#121926]">·</span>
                   <time className="text-[#121926]">
@@ -98,10 +98,10 @@ export default function BlogsPage() {
                     </>
                   )}
                 </div>
-                <h2 className="text-3xl font-serif text-[#121926] mb-3 transition-colors duration-300 group-hover:text-[#121926]/80">
+                <h2 className="text-2xl sm:text-3xl font-serif text-[#121926] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#121926]/80">
                   {featuredBlogs[0].title}
                 </h2>
-                <p className="text-[#435166] line-clamp-2 leading-relaxed text-lg">
+                <p className="text-[#435166] line-clamp-2 leading-relaxed text-base sm:text-lg">
                   {featuredBlogs[0].description}
                 </p>
               </div>
@@ -109,7 +109,7 @@ export default function BlogsPage() {
             {user && user.id === featuredBlogs[0].authorId && (
               <div className="flex space-x-4 mt-4">
                 <button
-                  className="text-sm text-[#0B3619] hover:text-[#0B3619]/80"
+                  className="text-xs sm:text-sm text-[#0B3619] hover:text-[#0B3619]/80"
                   onClick={(e) => {
                     e.preventDefault();
                     router.push(`/blogs/${featuredBlogs[0].id}/edit`);
@@ -118,7 +118,7 @@ export default function BlogsPage() {
                   Edit
                 </button>
                 <button
-                  className="text-sm text-red-600 hover:text-red-900"
+                  className="text-xs sm:text-sm text-red-600 hover:text-red-900"
                   onClick={(e) => {
                     e.preventDefault();
                     handleDelete(featuredBlogs[0].id);
@@ -131,7 +131,7 @@ export default function BlogsPage() {
           </article>
 
           {/* Right Side Stacked Articles */}
-          <div className="lg:col-span-4 flex flex-col justify-between gap-8">
+          <div className="lg:col-span-4 flex flex-col justify-between gap-6 sm:gap-8">
             {featuredBlogs.slice(1, 3).map((blog) => (
               <article key={blog.id} className="group transition-all duration-300 hover:-translate-y-1">
                 <Link href={`/blogs/${blog.id}`}>
@@ -141,13 +141,13 @@ export default function BlogsPage() {
                         src={blog.image}
                         alt={blog.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                       />
                     </div>
                   </div>
                   <div>
-                    <div className="flex items-center text-sm mb-2">
+                    <div className="flex flex-wrap items-center text-xs sm:text-sm mb-2">
                       <span className="uppercase text-[#121926]">{blog.category}</span>
                       <span className="mx-2 text-[#121926]">·</span>
                       <time className="text-[#121926]">
@@ -163,10 +163,10 @@ export default function BlogsPage() {
                         </>
                       )}
                     </div>
-                    <h2 className="text-xl font-serif text-[#121926] mb-2 transition-colors duration-300 group-hover:text-[#121926]/80">
+                    <h2 className="text-lg sm:text-xl font-serif text-[#121926] mb-2 transition-colors duration-300 group-hover:text-[#121926]/80">
                       {blog.title}
                     </h2>
-                    <p className="text-[#435166] line-clamp-2 leading-relaxed text-sm">
+                    <p className="text-[#435166] line-clamp-2 leading-relaxed text-xs sm:text-sm">
                       {blog.description}
                     </p>
                   </div>
@@ -174,7 +174,7 @@ export default function BlogsPage() {
                 {user && user.id === blog.authorId && (
                   <div className="flex space-x-4 mt-4">
                     <button
-                      className="text-sm text-[#0B3619] hover:text-[#0B3619]/80"
+                      className="text-xs sm:text-sm text-[#0B3619] hover:text-[#0B3619]/80"
                       onClick={(e) => {
                         e.preventDefault();
                         router.push(`/blogs/${blog.id}/edit`);
@@ -183,7 +183,7 @@ export default function BlogsPage() {
                       Edit
                     </button>
                     <button
-                      className="text-sm text-red-600 hover:text-red-900"
+                      className="text-xs sm:text-sm text-red-600 hover:text-red-900"
                       onClick={(e) => {
                         e.preventDefault();
                         handleDelete(blog.id);
@@ -201,7 +201,7 @@ export default function BlogsPage() {
 
       {/* Remaining Articles Grid */}
       {remainingBlogs.length > 0 && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
           {remainingBlogs.map((blog) => (
             <article key={blog.id} className="group transition-all duration-300 hover:-translate-y-1">
               <Link href={`/blogs/${blog.id}`}>
@@ -211,13 +211,13 @@ export default function BlogsPage() {
                       src={blog.image}
                       alt={blog.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 640px) 100vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center text-sm mb-2">
+                  <div className="flex flex-wrap items-center text-xs sm:text-sm mb-2">
                     <span className="uppercase text-[#121926]">{blog.category}</span>
                     <span className="mx-2 text-[#121926]">·</span>
                     <time className="text-[#121926]">
@@ -233,10 +233,10 @@ export default function BlogsPage() {
                       </>
                     )}
                   </div>
-                  <h2 className="text-xl font-serif text-[#121926] mb-2 transition-colors duration-300 group-hover:text-[#121926]/80">
+                  <h2 className="text-lg sm:text-xl font-serif text-[#121926] mb-2 transition-colors duration-300 group-hover:text-[#121926]/80">
                     {blog.title}
                   </h2>
-                  <p className="text-[#435166] line-clamp-2 leading-relaxed text-sm">
+                  <p className="text-[#435166] line-clamp-2 leading-relaxed text-xs sm:text-sm">
                     {blog.description}
                   </p>
                 </div>
@@ -244,7 +244,7 @@ export default function BlogsPage() {
               {user && user.id === blog.authorId && (
                 <div className="flex space-x-4 mt-4">
                   <button
-                    className="text-sm text-[#0B3619] hover:text-[#0B3619]/80"
+                    className="text-xs sm:text-sm text-[#0B3619] hover:text-[#0B3619]/80"
                     onClick={(e) => {
                       e.preventDefault();
                       router.push(`/blogs/${blog.id}/edit`);
@@ -253,7 +253,7 @@ export default function BlogsPage() {
                     Edit
                   </button>
                   <button
-                    className="text-sm text-red-600 hover:text-red-900"
+                    className="text-xs sm:text-sm text-red-600 hover:text-red-900"
                     onClick={(e) => {
                       e.preventDefault();
                       handleDelete(blog.id);
