@@ -24,8 +24,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const parsedAuth = JSON.parse(storedAuth);
         if (parsedAuth.isLoggedIn && parsedAuth.user) {
           setAuthState(parsedAuth);
-          // Set cookie for middleware
-          document.cookie = `auth=${JSON.stringify(parsedAuth)}; path=/`;
+          // Set cookie for middleware with 30-day expiration
+          const expirationDate = new Date();
+          expirationDate.setDate(expirationDate.getDate() + 30);
+          document.cookie = `auth=${JSON.stringify(parsedAuth)}; path=/; expires=${expirationDate.toUTCString()}`;
         } else {
           // Clear invalid auth data
           localStorage.removeItem('auth');
@@ -48,7 +50,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const newAuthState = { isLoggedIn: true, user };
         setAuthState(newAuthState);
         localStorage.setItem('auth', JSON.stringify(newAuthState));
-        document.cookie = `auth=${JSON.stringify(newAuthState)}; path=/`;
+        
+        // Set cookie with 30-day expiration
+        const expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 30);
+        document.cookie = `auth=${JSON.stringify(newAuthState)}; path=/; expires=${expirationDate.toUTCString()}`;
+        
         return true;
       }
       return false;
@@ -80,7 +87,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const newAuthState = { isLoggedIn: true, user: newUser };
       setAuthState(newAuthState);
       localStorage.setItem('auth', JSON.stringify(newAuthState));
-      document.cookie = `auth=${JSON.stringify(newAuthState)}; path=/`;
+      
+      // Set cookie with 30-day expiration
+      const expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + 30);
+      document.cookie = `auth=${JSON.stringify(newAuthState)}; path=/; expires=${expirationDate.toUTCString()}`;
 
       return true;
     } catch (error) {
